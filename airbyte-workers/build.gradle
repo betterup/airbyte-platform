@@ -12,6 +12,8 @@ configurations {
 }
 
 configurations.all {
+    // The quartz-scheduler brings in a really old version of hikari, we do not want to inherit this version.
+    exclude group: "com.zaxxer", module: "HikariCP-java7"
     resolutionStrategy {
         // Ensure that the versions defined in deps.toml are used
         // instead of versions from transitive dependencies
@@ -36,6 +38,7 @@ dependencies {
     implementation(libs.temporal.sdk) {
         exclude module: 'guava'
     }
+    implementation libs.jetbrains.annotations
     implementation libs.apache.ant
     implementation libs.apache.commons.lang
     implementation libs.apache.commons.text

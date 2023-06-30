@@ -305,7 +305,7 @@ subprojects { subproj ->
         configFile = rootProject.file('tools/gradle/checkstyle/checkstyle.xml')
         ignoreFailures = false
         showViolations = true
-        toolVersion = '10.0'
+        toolVersion = '10.12.1'
     }
     checkstyleMain.source = "src/main/java"
 

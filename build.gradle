@@ -258,6 +258,7 @@ subprojects { subproj ->
             def buildPlatform = System.getenv('DOCKER_BUILD_PLATFORM') ?: isArm64 ? 'linux/arm64' : 'linux/amd64'
             def alpineImage = System.getenv('ALPINE_IMAGE') ?: isArm64 ? 'arm64v8/alpine:3.14' : 'amd64/alpine:3.14'
             def nginxImage = System.getenv('NGINX_IMAGE') ?: isArm64 ? 'arm64v8/nginx:alpine' : 'amd64/nginx:alpine'
+            def temporalAutoSetupImage = System.getenv('TEMPORAL_AUTO_SETUP_IMAGE') ?: 'temporalio/auto-setup:latest'
 
             // Used by the platform -- Must be an Amazon Corretto-based image for build to work without modification to Dockerfile instructions
             def openjdkImage = System.getenv('JDK_IMAGE') ?: 'airbyte/airbyte-base-java-image:2.0.2'
@@ -269,6 +270,7 @@ subprojects { subproj ->
             buildArgs.put('ALPINE_IMAGE', alpineImage)
             buildArgs.put('NGINX_IMAGE', nginxImage)
             buildArgs.put('JDK_IMAGE', openjdkImage)
+            buildArgs.put('TEMPORAL_AUTO_SETUP_IMAGE', temporalAutoSetupImage)
             buildArgs.put('VERSION', rootProject.ext.version)
 
         }

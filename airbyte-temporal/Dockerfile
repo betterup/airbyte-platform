@@ -1,5 +1,5 @@
 # A test describe in the README is available to test a version update
-ARG TEMPORAL_AUTO_SETUP_IMAGE=temporal/auto-setup:2023.5.19.1
+ARG TEMPORAL_AUTO_SETUP_IMAGE=temporalio/auto-setup:1.21
 FROM ${TEMPORAL_AUTO_SETUP_IMAGE}
 
 ENV TEMPORAL_HOME /etc/temporal

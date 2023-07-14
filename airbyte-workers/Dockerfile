@@ -25,7 +25,9 @@ ADD bin/${APPLICATION}-${VERSION}.tar /app
 COPY WellKnownTypes.json /app
 
 # Removes lingering jars with vulnerable packages; forces success if does not exist
-RUN rm /app/airbyte-workers-dev/lib/launchdarkly-java-server-*.jar; exit 0
+RUN rm /app/airbyte-workers-dev/lib/launchdarkly-java-server-*.jar; \
+    rm /app/airbyte-workers-dev/lib/auto-value-*.jar; \
+    exit 0
 
 # wait for upstream dependencies to become available before starting server
 ENTRYPOINT ["/bin/sh", "-c", "${APPLICATION}-${VERSION}/bin/${APPLICATION}"]

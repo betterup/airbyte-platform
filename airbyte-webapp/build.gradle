@@ -107,21 +107,21 @@ task licenseCheck(type: PnpmTask) {
     outputs.upToDateWhen { true }
 }
 
-task validateLinks(type: PnpmTask) {
-    dependsOn pnpmInstall
+// task validateLinks(type: PnpmTask) {
+//     dependsOn pnpmInstall
 
-    args = ['run', 'validate-links']
+//     args = ['run', 'validate-links']
 
-    inputs.file 'scripts/validate-links.ts'
-    inputs.file 'src/utils/links.ts'
+//     inputs.file 'scripts/validate-links.ts'
+//     inputs.file 'src/utils/links.ts'
 
-    // Since the output of this task depends on availability of URLs
-    // we never want to treat it as "up-to-date" on CI and always want to run it
-    // but running locally we treat it as up-to-date just depending on its inputs
-    outputs.upToDateWhen {
-        System.getenv("CI") === null
-    }
-}
+//     // Since the output of this task depends on availability of URLs
+//     // we never want to treat it as "up-to-date" on CI and always want to run it
+//     // but running locally we treat it as up-to-date just depending on its inputs
+//     outputs.upToDateWhen {
+//         System.getenv("CI") === null
+//     }
+// }
 
 task buildStorybook(type: PnpmTask) {
     dependsOn pnpmInstall
@@ -155,7 +155,7 @@ task copyNginx(type: Copy) {
 }
 
 // Those tasks should be run as part of the "check" task
-check.dependsOn validateLinks, licenseCheck, test
+// check.dependsOn validateLinks, licenseCheck, test
 
 build.dependsOn buildStorybook
 

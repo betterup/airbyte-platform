@@ -24,14 +24,5 @@ ADD bin/${APPLICATION}-${VERSION}.tar /app
 # Grab well-known types file
 COPY WellKnownTypes.json /app
 
-# Removes lingering jars with vulnerable packages
-RUN \
-    # removes jars with guava_guava
-    rm /app/airbyte-workers-dev/lib/launchdarkly-java-server-*.jar && \
-    rm /app/airbyte-workers-dev/lib/auto-value-*.jar && \
-    # removes jars with netty_netty
-    rm /app/airbyte-workers-dev/lib/micrometer-registry-statsd-*.jar && \
-    echo '*Removed all jars with guava_guava vulnerability*'
-
 # wait for upstream dependencies to become available before starting server
 ENTRYPOINT ["/bin/sh", "-c", "${APPLICATION}-${VERSION}/bin/${APPLICATION}"]

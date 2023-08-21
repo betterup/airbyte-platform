@@ -98,7 +98,7 @@ log4j-impl = { module = "org.apache.logging.log4j:log4j-slf4j-impl", version.ref
 log4j-over-slf4j = { module = "org.slf4j:log4j-over-slf4j", version.ref = "slf4j" }
 log4j-web = { module = "org.apache.logging.log4j:log4j-web", version.ref = "log4j" }
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
-micrometer-statsd = { module = "io.micrometer:micrometer-registry-statsd", version = "1.11.1" }
+micrometer-statsd = { module = "io.micrometer:micrometer-registry-statsd", version = "1.11.3" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito" }
 mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito" }

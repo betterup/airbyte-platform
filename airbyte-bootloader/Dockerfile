@@ -8,7 +8,6 @@ ENV VERSION ${VERSION}
 
 RUN addgroup -S appgroup && \
     adduser -S appuser -G appgroup -u 1000
-USER appuser
 
 WORKDIR /app
 
@@ -25,5 +24,7 @@ RUN rm /app/airbyte-bootloader-dev/lib/auto-value-*.jar
 
 # CVE: https://nvd.nist.gov/vuln/detail/CVE-2023-34462
 RUN rm /app/airbyte-bootloader-dev/lib/netty-handler-4.1.94.Final.jar
+
+USER appuser
 
 ENTRYPOINT ["/bin/sh", "-c", "${APPLICATION}-${VERSION}/bin/${APPLICATION}"]

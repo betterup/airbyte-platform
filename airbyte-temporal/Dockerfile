@@ -10,6 +10,7 @@ COPY bin/scripts/update-and-start-temporal.sh update-and-start-temporal.sh
 # https://nvd.nist.gov/vuln/detail/CVE-2023-39533
 # https://nvd.nist.gov/vuln/detail/CVE-2023-39533
 # https://nvd.nist.gov/vuln/detail/CVE-2023-3485
+USER root
 RUN rm /usr/local/bin/*
 
 ENTRYPOINT ["./update-and-start-temporal.sh"]

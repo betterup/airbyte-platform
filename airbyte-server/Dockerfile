@@ -26,6 +26,7 @@ RUN rm /app/airbyte-server-dev/lib/netty-handler-4.1.94.Final.jar
 # CVE: https://nvd.nist.gov/vuln/detail/CVE-2020-8908
 RUN rm /app/airbyte-server-dev/lib/launchdarkly-java-server-sdk-6.2.0.jar
 RUN rm /app/airbyte-server-dev/lib/guava-32.0.1-jre.jar	
+RUN rm /app/airbyte-server-dev/lib/auto-value-1.10.1.jar
 
 USER appuser
 

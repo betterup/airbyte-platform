@@ -26,12 +26,12 @@ RUN rm /app/airbyte-cron-dev/lib/launchdarkly-java-server-sdk-6.2.0.jar
 RUN rm /app/airbyte-cron-dev/lib/auto-value-1.10.1.jar
 
 # CVE: https://nvd.nist.gov/vuln/detail/CVE-2023-44487
-RUN rm /airbyte/lib/netty-codec-http2-4.1.94.Final.jar
-RUN rm /airbyte/lib/netty-codec-4.1.94.Final.jar
-RUN rm /airbyte/lib/netty-codec-4.1.96.Final.jar
+RUN rm /app/airbyte-cron-dev/lib/netty-codec-http2-4.1.94.Final.jar
+RUN rm /app/airbyte-cron-dev/lib/netty-codec-4.1.94.Final.jar
+RUN rm /app/airbyte-cron-dev/lib/netty-codec-4.1.96.Final.jar
 
 # CVE: https://nvd.nist.gov/vuln/detail/CVE-2023-4586
-RUN rm /airbyte/lib/netty-handler-4.1.96.Final.jar
+RUN rm /app/airbyte-cron-dev/lib/netty-handler-4.1.96.Final.jar
 
 USER appuser
 # wait for upstream dependencies to become available before starting server

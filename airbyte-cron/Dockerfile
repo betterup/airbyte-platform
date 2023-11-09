@@ -31,6 +31,9 @@ RUN rm /app/airbyte-cron-dev/lib/netty-codec-http2-4.1.94.Final.jar
 RUN rm /app/airbyte-cron-dev/lib/netty-codec-4.1.94.Final.jar
 RUN rm /app/airbyte-cron-dev/lib/micrometer-registry-statsd-1.11.3.jar
 
+# CVE: https://nvd.nist.gov/vuln/detail/CVE-2023-42503
+RUN rm /app/airbyte-cron-dev/lib/commons-compress-1.22.jar
+
 USER appuser
 # wait for upstream dependencies to become available before starting server
 ENTRYPOINT ["/bin/sh", "-c", "${APPLICATION}-${VERSION}/bin/${APPLICATION}"]

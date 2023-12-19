@@ -1,4 +1,4 @@
-ARG JDK_IMAGE=airbyte/airbyte-base-java-image:2.0.2
+ARG JDK_IMAGE=airbyte/airbyte-base-java-image:2.1.0
 FROM ${JDK_IMAGE}
 
 ARG VERSION=0.44.4
@@ -23,7 +23,7 @@ RUN rm /app/airbyte-bootloader-dev/lib/auto-value-*.jar
 
 
 # CVE: https://nvd.nist.gov/vuln/detail/CVE-2023-34462
-RUN rm /app/airbyte-bootloader-dev/lib/netty-handler-4.1.94.Final.jar
+# RUN rm /app/airbyte-bootloader-dev/lib/netty-handler-4.1.94.Final.jar
 
 # CVE: https://nvd.nist.gov/vuln/detail/CVE-2023-44487
 # CVE: https://nvd.nist.gov/vuln/detail/CVE-2023-4586
